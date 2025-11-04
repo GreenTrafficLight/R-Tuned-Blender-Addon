@@ -130,4 +130,4 @@ class BinaryReader:
         
     def readBytesToString(self, size, encoding="utf-8"):
         byteArray = self.readBytes(size)
-        return self.bytesToString(byteArray, encoding)
+        return self.bytesToString(byteArray, encoding).replace("\0", "")
