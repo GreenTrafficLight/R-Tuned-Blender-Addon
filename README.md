@@ -1,3 +1,3 @@
-# Ridge-Racer-Blender-Addon
+# R-Tuned-Blender-Addon
 
-( Unfinished )
+Blender Import Plugin for R-Tuned: Ultimate Street Racing
