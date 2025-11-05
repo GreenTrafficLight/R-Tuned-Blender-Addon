@@ -9,6 +9,18 @@ from mathutils import *
 from ...Utilities import *
 from ...Formats.bin import *
 
+def extract_textures(texture_bin: TextureBin):
+
+    i = 0
+    for texture in texture_bin.textures:
+        for sub_texture in texture.sub_textures:
+            pass
+            
+        i += 1
+
+
+
+
 def build_bin(geometry: GEOMETRY, object: OBJECT, folder_name: str):
 
     collection = bpy.data.collections.new(folder_name)

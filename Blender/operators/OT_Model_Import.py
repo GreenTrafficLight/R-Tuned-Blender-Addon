@@ -61,6 +61,9 @@ def importModel(directory: str, clear_scene: bool):
     object_path  = os.path.join(directory, "object.bin")
     object_file   = open(object_path, "rb")
 
+    texture_path = os.path.join(directory, "texture.bin")
+    texture_file = open(texture_path, "rb")
+
     br_geometry = BinaryReader(geometry_file)
     bin_geometry = GEOMETRY()
     bin_geometry.read(br_geometry)
@@ -68,6 +71,10 @@ def importModel(directory: str, clear_scene: bool):
     br_object = BinaryReader(object_file)
     bin_object = OBJECT()
     bin_object.read(br_object)
+
+    br_texture = BinaryReader(texture_file)
+    bin_texture = TextureBin()
+    bin_texture.deserialize(br_texture)
 
     folder_name = os.path.basename(os.path.normpath(directory))
     build_bin(bin_geometry, bin_object, folder_name)
